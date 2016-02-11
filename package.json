@@ -42,5 +42,21 @@
   "dependencies": {
     "express": "^4.13.4",
     "gzippo": "^0.2.0"
-  }
+  },
+  "description": "This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular) version 0.15.1.",
+  "version": "1.0.0",
+  "main": "Gruntfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tenaciousdee/patient-info.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tenaciousdee/patient-info/issues"
+  },
+  "homepage": "https://github.com/tenaciousdee/patient-info#readme"
 }
