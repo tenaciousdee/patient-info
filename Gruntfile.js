@@ -465,6 +465,8 @@ module.exports = function (grunt) {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
     }
 
+  grunt.loadNpmTasks('grunt-build-control');
+
     grunt.task.run([
       'clean:server',
       'wiredep',
