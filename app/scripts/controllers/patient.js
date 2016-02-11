@@ -13,5 +13,7 @@ angular.module('patientInfoApp')
     $scope.patients = [response];
   });
 
+  $scope.regex = "^[0-9]{3}$";
+
   window.$scope = $scope;
 }]);

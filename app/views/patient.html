@@ -9,7 +9,9 @@
         <p>{{ patient.contactAttributes.address1 }}</p>
         <p>{{ patient.contactAttributes.address2 }}</p>
         <p>{{ patient.contactAttributes.city }}, {{ patient.contactAttributes.state }} {{ patient.contactAttributes.postalCode}}</p>
-        <p>Cell: {{ patient.contactAttributes.cellPhone }}</p>
+        <p>Cell: <span ng-if="patient.contactAttributes.cellPhone.length === 10">{{ patient.contactAttributes.cellPhone }}</span>
+        <span ng-if="patient.contactAttributes.cellPhone.length !== 10">n/a</span>
+        </p>
         <p>Home: {{ patient.contactAttributes.homePhone || "n/a" }}</p>
         <p>{{ patient.contactAttributes.email }}</p>
       </div>
