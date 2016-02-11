@@ -1,0 +1,92 @@
+<h1>Patient Information</h1>
+<div ng-repeat="patient in patients track by $index">
+    <div class="col-lg-6">
+      <div class="well info">
+        <div class="center-block">
+        <h3><i class="glyphicon glyphicon-home"></i> Basic Information</h3>
+        <div class="content">
+        <p>{{ patient.firstName }} {{ patient.lastName }}</p>
+        <p>{{ patient.contactAttributes.address1 }}</p>
+        <p>{{ patient.contactAttributes.address2 }}</p>
+        <p>{{ patient.contactAttributes.city }}, {{ patient.contactAttributes.state }} {{ patient.contactAttributes.postalCode}}</p>
+        <p>Cell: {{ patient.contactAttributes.cellPhone }}</p>
+        <p>Home: {{ patient.contactAttributes.homePhone || "n/a" }}</p>
+        <p>{{ patient.contactAttributes.email }}</p>
+      </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="well info">
+        <div class="center-block">
+        <h3><i class="glyphicon glyphicon-calendar"></i> Appointments</h3>
+        <div class="content">
+        <div ng-repeat="appointment in patient.appointments track by $index">
+          <p><strong>Last:</strong> {{ appointment.apptDate | date: 'MM/dd/yyyy' }}</p>
+        <p><strong>Type:</strong> {{ appointment.type }}</p>
+      </div>
+      </div>
+      </div>
+      </div>
+    </div>
+
+  <div class="col-lg-6">
+    <div class="well">
+      <h3><i class="glyphicon glyphicon-user"></i> Demographic Information</h3>
+      <div class="content">
+      <p>Gender: {{ patient.demographicAttributes.gender }}</p>
+      <p>Ashkenazi Heritage: <span ng-if="patient.demographicAttributes.ashkenazi_heritage == true">Yes</span>
+      <span ng-if="patient.demographicAttributes.ashkenazi_heritage == false">No</span></p>
+      <p>Adopted: <span ng-if="patient.demographicAttributes.adopted == true">Yes</span>
+      <span ng-if="patient.demographicAttributes.adopted == false">No</span></p>
+    </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6">
+    <div class="well">
+      <h3><i class="glyphicon glyphicon-alert"></i> Cancer Risk</h3>
+      <div class="content">
+      <p> HBOC: {{ patient.cancerRiskResults.HBOC }}</p>
+      <p>HNPCC: {{ patient.cancerRiskResults.HNPCC }}</p>
+      <p>Claus: {{ patient.cancerRiskResults.Claus }}</p>
+      <p>Gail: {{ patient.cancerRiskResults.Gail }}</p>
+    </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6">
+    <div class="well">
+      <h3><i class="glyphicon glyphicon-baby-formula"></i> Reproductive History</h3>
+      <div class="content">
+      <p>Age of Menarche: {{ patient.reproductiveHistory.ageOfMenarche}}</p>
+      <p>Age of Periods Stopped: {{ patient.reproductiveHistory.agePeriodsStopped }}</p>
+      <p>Age of First Birth: {{ patient.reproductiveHistory.ageOfFirstBirth }}</p>
+    </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6">
+    <div class="well">
+      <h3><i class="glyphicon glyphicon-tree-deciduous"></i> Family History</h3>
+      <ul ng-repeat="family in patient.familyHistory">
+        <li>{{ family }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="col-lg-6">
+    <div class="well">
+      <h3><i class="glyphicon glyphicon-stats"></i> Genetic Testing</h3>
+      <div ng-repeat="genetic in patient.geneticTestingResults track by $index">
+        <h5>{{ genetic.name }}</h5>
+          <ul ng-repeat="mutation in genetic.mutations track by $index">
+            <li>{{ mutation.gene }}</li>
+            <li>{{ mutation.mutation }}</li>
+            <li>{{ mutation.type }}</li>
+          </ul>
+      </div>
+    </div>
+  </div>
+  </div>

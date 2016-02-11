@@ -1,0 +1,59 @@
+
+{
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "dateOfBirth" : "06/01/1987",
+    "contactAttributes" : {
+        "address1" : "222 W. Kinzie",
+        "address2" : "Unit 1230",
+        "cellPhone" : "283748392",
+        "homePhone" : null,
+        "city" : "Chicago",
+        "state" : "IL",
+        "postalCode" : "60618",
+        "email" : "jane@canceriq.com" },
+    "appointments" : [
+        {
+            "apptDate" : 1454708260518,
+            "type": "Follow-up"
+        }
+    ],
+    "demographicAttributes" : {
+        "gender" : "Female",
+        "ashkenazi_heritage" : true,
+        "adopted" : false
+    },
+    "cancerRiskResults" : {
+        "HBOC" : "Low",
+        "HNPCC" : "Med",
+        "Claus" : 0.346,
+        "Gail": 0.234
+    },
+    "reproductiveHistory": {
+        "ageOfMenarche": 12,
+        "agePeriodsStopped": 51,
+        "ageOfFirstBirth": 21
+    },
+    "familyHistory": [
+        "Mother with Breast Cancer under the age of 50",
+        "First Cousin (F) with Ovarian Cancer under the age of 50"
+    ],
+    "geneticTestingResults" : [
+        {
+            "name": "Ambry Genetics BRCA Plus",
+            "mutations": [
+                {
+                    "gene": "BRCA1",
+                    "mutation": "187delG",
+                    "type": "Deleterious"
+                },
+                {
+                    "gene": "TP53",
+                    "mutation": "17p13.1",
+                    "type": "Deleterious"
+                }
+            ]
+        }
+    ]
+
+}
